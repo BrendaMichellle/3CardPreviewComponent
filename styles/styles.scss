@@ -1,0 +1,144 @@
+/*
+Bright orange: hsl(31, 77%, 52%)
+Dark cyan: hsl(184, 100%, 22%)
+Very dark cyan: hsl(179, 100%, 13%)
+
+- Mobile: 375px
+- Desktop: 1440px
+
+font-family: 'Big Shoulders Display', cursive;
+font-family: 'Lexend Deca', sans-serif;
+*/
+
+/* --- VARIABLES ---*/
+$brightOrange: hsl(31, 77%, 52%);
+$darkCyan: hsl(184, 100%, 22%);
+$darkerCyan: hsl(179, 100%, 13%);
+
+$textColor: hsla(0, 0%, 100%, 0.75);
+$secondaryColor: hsl(0, 0%, 95%);
+
+/* --- MAPS ---*/
+$font-weights: (
+  'regular': 400,
+  'bold': 700,
+);
+
+/* --- MIXINS ---*/
+@mixin btnStyle {
+  background-color: $secondaryColor;
+  padding: 7px 20px;
+  border: 2px solid transparent;
+  border-radius: 42px;
+  outline: none;
+  font: inherit;
+  color: inherit;
+}
+
+@mixin optionStyle($background) {
+  background-color: $background;
+}
+
+/* --- STYLES ---*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 15px;
+  background-color: $secondaryColor;
+}
+
+.container {
+  color: $textColor;
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: map-get($font-weights, regular);
+  line-height: 1.7em;
+  max-width: 62vw;
+  max-height: 90vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+  top: 100px;
+}
+
+.container__option {
+  padding: 10px 40px;
+}
+
+.container__logo {
+  padding-top: 30px;
+  height: 57px;
+  width: 55px;
+}
+
+.container__text {
+  margin: 30px 0 80px;
+}
+
+.container__title {
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 25px;
+  font-weight: map-get($font-weights, bold);
+  color: $secondaryColor;
+  margin-bottom: 15px;
+}
+
+.container__button {
+  @include btnStyle;
+  &:hover {
+    border: 2px solid $textColor;
+    background-color: transparent;
+    color: $textColor;
+  }
+  margin-bottom: 30px;
+}
+
+.sedan {
+  @include optionStyle($brightOrange);
+  button {
+    color: $brightOrange;
+  }
+}
+
+.suv {
+  @include optionStyle($darkCyan);
+  button {
+    color: $darkCyan;
+  }
+}
+
+.luxury {
+  @include optionStyle($darkerCyan);
+  button {
+    color: $darkerCyan;
+  }
+}
+
+article:first-child {
+  border-radius: 5px 0px 0px 5px;
+}
+
+article:last-child {
+  border-radius: 0px 5px 5px 0px;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    grid-template-columns: 2fr;
+    max-width: 80vw;
+  }
+  article:first-child {
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  article:last-child {
+    border-radius: 0px 0px 5px 5px;
+  }
+}
