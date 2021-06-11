@@ -15,8 +15,8 @@ This is a solution to the [3-column preview card component challenge on Frontend
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [View solution](https://www.frontendmentor.io/solutions/responsive-3-card-preview-component-html5-and-sassscss-fHTIF7Zip)
+- Live Site: [live site](https://brendamichellle.github.io/3CardPreviewComponent/)
 
 ## My process
 
